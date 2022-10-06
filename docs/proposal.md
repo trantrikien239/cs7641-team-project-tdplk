@@ -22,6 +22,7 @@ We will evaluate the performance of our Supervised model using the quadratic wei
 <!-- ![figure4](media/f4.png) ![figure5](media/f5.png) -->
 
 
+<img src="media/f6.png"  width="1000" height="700">
 
 **References:**
 
@@ -34,5 +35,9 @@ Wang et al., NAACL (2022). On the Use of Bert for Automated Essay Scoring: Joint
 Ruder et al., NAACL( 2019).Transfer Learning in Natural Language Processing
 
 Feedback prize - english language learning. Kaggle. (2022). Retrieved October 6, 2022, from https://www.kaggle.com/competitions/feedback-prize-english-language-learning/overview/evaluation 
+
+Vaswani et al. Arxiv. (2017). Attention Is All You Need
+
+Mathias, S., & Bhattacharyya, P. (2018, May). ASAP++: Enriching the ASAP automated essay grading dataset with essay attribute scores. In Proceedings of the eleventh international conference on language resources and evaluation (LREC 2018)
 
 The Hewlett Foundation: Automated essay scoring. Kaggle. (2012). Retrieved October 6, 2022, from https://www.kaggle.com/competitions/asap-aes/overview/evaluation 
