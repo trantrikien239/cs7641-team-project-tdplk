@@ -19,12 +19,25 @@ We will evaluate the performance of our Supervised model using the quadratic wei
 
 <img src="media/f4.png"  width="450" height="150">
 <img src="media/f5.png"  width="400" height="150">
-<!-- ![figure4](media/f4.png) ![figure5](media/f5.png) -->
 
+<br /> 
+
+## Project planning
 
 <img src="media/f6.png"  width="1000" height="700">
 
-**References:**
+## Contribution table
+| Phase | Name | Contribution |
+| ----------- | ----------- | ----------- |
+| Proposal | Tanmay | - Literature review: Enriching data for Automated Essays Scoring task, Transfer learning in NLP <br /> - Github page creation and editing |
+| Proposal | Palash | - Liternature review: BERT architecture, Transfer learning utilizing BERT for Automated Essay Scoring <br /> - Video production: Script writing and recording |
+| Proposal | Kien | - Literature review: Automated Essays Scoring methods, Transformers and Recurrent Neural Network <br /> - Slide production for video, Github repository creation, Final submission |
+| Proposal | Duncan | - Proposal writing: Introduction & Background, Problem Definition, References <br /> - Video production: Script writing and recording |
+| Proposal | Lily | - Proposal writing: Methods, and Potential Results & Discussion, and final proof read <br /> - Project timeline planning and Gantt Chart |
+
+<br /> 
+
+## References
 
 Ke, Z., & Ng, V. (2019). Automated Essay Scoring: A Survey of the State of the Art. IJCAI.
 
@@ -32,7 +45,7 @@ Devlin et al., NAACL (2019). BERT: Pre-training of Deep Bidirectional Transforme
 
 Wang et al., NAACL (2022). On the Use of Bert for Automated Essay Scoring: Joint Learning of Multi-Scale Essay Representation
 
-Ruder et al., NAACL( 2019).Transfer Learning in Natural Language Processing
+Ruder et al., NAACL(2019).Transfer Learning in Natural Language Processing
 
 Feedback prize - english language learning. Kaggle. (2022). Retrieved October 6, 2022, from https://www.kaggle.com/competitions/feedback-prize-english-language-learning/overview/evaluation 
 
