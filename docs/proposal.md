@@ -21,4 +21,18 @@ We will evaluate the performance of our Supervised model using the quadratic wei
 <img src="media/f5.png"  width="400" height="150">
 <!-- ![figure4](media/f4.png) ![figure5](media/f5.png) -->
 
-**Tanmay was here**
+
+
+**References:**
+
+Ke, Z., & Ng, V. (2019). Automated Essay Scoring: A Survey of the State of the Art. IJCAI.
+
+Devlin et al., NAACL (2019). BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding
+
+Wang et al., NAACL (2022). On the Use of Bert for Automated Essay Scoring: Joint Learning of Multi-Scale Essay Representation
+
+Ruder et al., NAACL( 2019).Transfer Learning in Natural Language Processing
+
+Feedback prize - english language learning. Kaggle. (2022). Retrieved October 6, 2022, from https://www.kaggle.com/competitions/feedback-prize-english-language-learning/overview/evaluation 
+
+The Hewlett Foundation: Automated essay scoring. Kaggle. (2012). Retrieved October 6, 2022, from https://www.kaggle.com/competitions/asap-aes/overview/evaluation 
