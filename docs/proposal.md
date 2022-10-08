@@ -1,6 +1,6 @@
 # Project proposal
 
-We are conducting our machine learning project on essay grading, based on a Kaggle competition where the goal is to evaluate the essays of 8th-12th grade English as second language learners. In accordance with the competition and its description, we will be predicting six analytic measures for each essay, namely: cohesion, syntax, vocabulary, phraseology, grammar, and conventions. We plan to use a popular pre-trained general language model BERT and utilizing its output to train our own model (or potentially models) on the Kaggle data. The dataset contains 3911 essays with a mean of 461 words.
+We are conducting our machine learning project on essay grading, based on a Kaggle competition where the goal is to evaluate the essays of 8th-12th grade English as second language learners. In accordance with the competition and its description, we will be predicting six analytic measures for each essay, namely: cohesion, syntax, vocabulary, phraseology, grammar, and conventions. We plan to use a popular pre-trained general language model BERT and utilize its output to train our own model (or potentially models) on the Kaggle data. The dataset contains 3911 essays with a mean of 461 words.
 
 ![figure1](media/f1.png)
 <img src="media/f2.png"  width="300" height="250">
@@ -27,6 +27,7 @@ We will evaluate the performance of our Supervised model using the quadratic wei
 <img src="media/f6.png"  width="1000" height="700">
 
 ## Contribution table
+
 | Phase | Name | Contribution |
 | ----------- | ----------- | ----------- |
 | Proposal | Tanmay | - Literature review: Enriching data for Automated Essays Scoring task, Transfer learning in NLP <br /> - Github page creation and editing |
