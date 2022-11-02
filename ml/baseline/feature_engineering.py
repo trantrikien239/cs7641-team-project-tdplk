@@ -14,8 +14,15 @@ class FeatureEngineeringPipieline(TransformerMixin):
         self.fit(X,y=None)
         return self.transform(X)
 
-    def feature_1(text):
+    # Number of unique words(Vocabulary)
+    def unique_word(text):
         return new_feature
-
-    def feature2(text):
+    # Number of spelling error(Conventions)
+    def spelling_error(text):
+        return new_feature
+    # Number of capitalization/punctuation error(Conventions)
+    def capital_punc_error(text):
+        return new_feature
+    # #of grammar/tense error
+    def grammar_tense_error(text):
         return new_feature
