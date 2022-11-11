@@ -66,10 +66,25 @@ We will report the implementation, result, and discussion of each approaches sep
 
 ### B. RNN-based approach
 #### 1. Data pre-processing
-***//Todo: Add content***
+
+After tokenization, we leveraged existing pre-trained word embeddings, specifically `glove-wiki-gigaword-200` embeddings as input for the GRU models. Using this embedding, each words is represented by a 200-dimensional vector. For the RNN-based approach, we didn't handle each typos separately, instead, all typos will be assigned to a trainable vector (initialized randomly). This way, the model can understand typo through learning.
 
 #### 2. ML model implementation
-***//Todo: Add content***
+
+As we have 6 different scores for each essay, we will build a multitask-learning model with 1 encoder and 6 different decoders. For the encoder, we choose to use Gated Recurrent Unit (GRU) over Long-short term memory (LSTM) as it has been demonstrated to be trained much faster with minimal or no sacrifice in performance. GRU can be stacked (similar to multi-layer perceptron) to enble the learning of more complex patterns. We employ dropout as the main regularization method for the GRU cells. For the decoders, we choose to use fully-connected multi-layer perceptron (MLP) because it is powerful and easy to train.
+
+![rnn-architecture](media/rnn-architecture.jpeg)
+
+*Figure 1: Network architecture of the RNN model*
+
+We implemented the model using Pytorch, with ReLU activation and mean squared error (MSE) as the loss function. The hyper-parameters for the model are: 
+- `gru_size`: Size of the hidden layer output from each GRU cell
+- `drop_prob`: Probability of dropout regularization for GRU
+- `gru_num_layer`: Depth of the GRU components (how many layer of GRU being stacked)
+- `decoder_depth`: Depth of the MLP decoders
+- `decoder_size`: Size of each layer in the decoders
+
+An early stopping mechanism was also employed using a validation set (split from the training set), training would stop if validation loss doesn't improve for 10 consecutive epochs. Training was performed on a commercial GPU, taking around 5-10 minutes to train before early stopping. Due to the constraints in computational power, we employ partial fractional design to test only the main effects of different choices.
 
 #### 3. Results
 ***//Todo: Add content***
