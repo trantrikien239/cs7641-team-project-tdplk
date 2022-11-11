@@ -104,7 +104,7 @@ An early stopping mechanism was also employed using a validation set (split from
 | ----------- | ----------- | ----------- |
 | Progress Report | Tanmay | Data Collection, Baseline Model Development, Evaluation |
 | Progress Report | Palash |  |
-| Progress Report | Kien |  |
+| Progress Report | Kien | Building, training and experiments of the RNN-based model, writing progress report for the same parts |
 | Progress Report | Duncan | Methods, Baseline Model Development |
 | Progress Report | Lily | Methods, Baseline Model Development |
 
