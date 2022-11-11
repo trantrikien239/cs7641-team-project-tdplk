@@ -57,14 +57,17 @@ Trying these approaches before deep-diving on Transformer-based model have the f
 We will report the implementation, result, and discussion of each approaches separately. Then compare the two approach and discuss the implications for next steps.
 
 ### A. Classical approach
-#### 1. Data pre-processing
+#### 1. Data Preprocessing
 By using the LanguageTools library in Python, we were able to quantify and categorize the mistakes in each essay. The library inputted the raw essay text and outputted the number of mistakes in a broad set of categories, including Grammar, Confused Words, Colocations, Redundancy, Style, American English Style, Nonstandard Phrases, Typos, Casing, Semantics, Typography, Miscellaneous, British English, Compounding, and Punctuation. We proceeded to remove the categories American English Style, British English, and Semantics, because they were either not relevant to our essay scoring task or had an insignificant number of instances and would not provide meaningful information to our models. 
 
+<img src="media/mistake_counts.png"  width="200" height="300">
 
-#### 2. ML model implementation
+#### 2. ML Model Implementation
 We first attempted to predict essay scores without using a deep learning approach.  The predictors we used are the error counts obtained from the LanguageTools library. We created six models to predict each of the six responses (cohesion, syntax, vocabulary, phraseology, grammar, and conventions). Then, we created a seventh model to predict the average of these six responses (holistic score) as a baseline comparison. We then tested different models to predict the essay scores. For all of our testing, we split the data into training, validation, and testing. We also used Grid Search to optimize for various hyperparameters to obtain the best set for each model. We used RMSE as a performance metric. 
 
 First, we tested Lasso Regression to establish baseline performance and to find insignificant features, and we found that Lasso only eliminated one or two variables in each model. We then tested XGBoost and Random Forest. The validation performances are shown in the table below. We found that XGBoost performed marginally better than Lasso and Random Forest across the different response variables. We also noted that Random Forest and XGBoost performed significantly better on predicting the holistic score than Lasso, and that these models predicted holistic score more accurately than the individual metrics. We selected XGBoost as our baseline model and will compare it to the RNN-based model and our future Transformer-based model. In the future, we will experiment further with the XGBoost model and see if we can improve it by incorporating text embedding data along with the LanguageTools data. 
+
+<img src="media/baseline_validation.png"  width="600" height="400">
 
 #### 3. Results
 ***//Todo: Add content***
