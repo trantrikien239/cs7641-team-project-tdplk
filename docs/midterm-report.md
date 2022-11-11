@@ -2,9 +2,7 @@
 
 ## Introduction
 
-Essay scoring is a relevant and applicable usage of Machine Learning as it can tangibly save hours required to manually grade essays. 
-
-***//Todo: Add literature review***
+We are conducting our machine learning project on automated essay scoring(AES), based on a Kaggle competition where the goal is to evaluate the essays of 8th-12th grade English as second language learners. In accordance with the competition and its description, we will be predicting six analytic measures for each essay, namely: cohesion, syntax, vocabulary, phraseology, grammar, and conventions. We plan to use a popular pre-trained general language model BERT and utilizing its output to train our own model (or potentially models) on the Kaggle data. The dataset contains 3911 essays with a mean of 461 words.
 
 ## Problem definition & Data collection
 
@@ -104,11 +102,11 @@ An early stopping mechanism was also employed using a validation set (split from
 
 | Phase | Name | Contribution |
 | ----------- | ----------- | ----------- |
-| Proposal | Tanmay | |
-| Proposal | Palash | |
-| Proposal | Kien |  |
-| Proposal | Duncan |  |
-| Proposal | Lily |  |
+| Progress Report | Tanmay | Data Collection, Baseline Model Development, Evaluation |
+| Progress Report | Palash |  |
+| Progress Report | Kien |  |
+| Progress Report | Duncan | Methods, Baseline Model Development |
+| Progress Report | Lily | Methods, Baseline Model Development |
 
 <br /> 
 
