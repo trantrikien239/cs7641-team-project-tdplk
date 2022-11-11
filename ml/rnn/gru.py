@@ -9,7 +9,7 @@ from copy import deepcopy
 
 class GRUGrader(nn.Module):
     def __init__(self, gensim_emb_weights=None, freeze_emb=False, output_size=1, gru_size=64, drop_prob=0.1, 
-            gru_num_layer=8, bidirectional=False, decoder_depth=3, decoder_size = [128, 512, 64],
+            gru_num_layer=8, bidirectional=False, decoder_depth=3, decoder_size = [256, 512, 64],
             word_embedding='glove-wiki-gigaword-200'):
         super().__init__()
         if decoder_depth != len(decoder_size):
