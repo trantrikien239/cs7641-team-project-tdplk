@@ -97,7 +97,6 @@ We implemented the model using Pytorch, with ReLU activation and mean squared er
 - `decoder_size`: Size of each layer in the decoders
 
 An early stopping mechanism was also employed using a validation set (split from the training set), training would stop if validation loss doesn't improve for 10 consecutive epochs. Training was performed on a commercial GPU, taking around 5-10 minutes to train before early stopping. Due to the constraints in computational power, we employ partial fractional design to test only the main effects of different choices.
-
 #### 3. Results
 We compare the model performance on MCRMSE. The test set reults for the models are shown below. 
 
