@@ -2,7 +2,7 @@ import torch
 from copy import deepcopy
 
 def train_grader(train_dl, valid_dl, model, model_name, loss_func, 
-    opt, epochs=1, device=None):
+    opt, save_path=".", epochs=1, device=None):
     if device is None:
         device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     model.to(device)
@@ -34,7 +34,7 @@ def train_grader(train_dl, valid_dl, model, model_name, loss_func,
         if vl < best_eval_loss and vl > tl:
             best_eval_loss = vl
             best_model = deepcopy(model)
-            torch.save(model.state_dict(), f'best_model_{model_name}.pt')
+            torch.save(model.state_dict(), f'{save_path}/best_{model_name}.pt')
         eval_loss_list.append(vl)
         print(f"Epoch {epoch:04}, train loss: {tl:.6f}, valid loss: {vl:.6f}, best valid loss: {best_eval_loss:.6f}")
         if epoch > 5 and min(eval_loss_list[-10:]) > best_eval_loss:
