@@ -70,7 +70,7 @@ First, we tested Lasso Regression to establish baseline performance and to find 
 #### 3. Results
 The validation model results are added below.
 
-<img src="media/metrics_for_baseline_model.png"  width="600" height="400">
+<img src="media/metrics_for_baseline_model.PNG"  width="600" height="400">
 
 <img src="media/plot_for_baseline_model.png"  width="600" height="400">
 
