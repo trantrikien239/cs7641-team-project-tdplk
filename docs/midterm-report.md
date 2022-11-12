@@ -72,7 +72,7 @@ The validation model results are added below.
 
 <img src="media/metrics_for_baseline_model.PNG"  width="600" height="400">
 
-<img src="media/plot_for_baseline_model.png"  width="600" height="400">
+<img src="media/plot_for_baseline_model.PNG"  width="600" height="400">
 
 We selected XGBoost as our baseline model and will compare it to the RNN-based model and our future Transformer-based model. In the future, we will experiment further with the XGBoost model and see if we can improve it by incorporating text embedding data along with the LanguageTools data. 
 
@@ -100,11 +100,11 @@ An early stopping mechanism was also employed using a validation set (split from
 #### 3. Results
 We compare the model performance on MCRMSE. The test set reults for the models are shown below. 
 
-<img src="media/metric_for_rnn_model.png"  width="600" height="400">
+<img src="media/metric_for_rnn_model.PNG"  width="600" height="400">
 
-<img src="media/mcrmse_rnn_model.png"  width="600" height="400">
+<img src="media/mcrmse_rnn_model.PNG"  width="600" height="400">
 
-<img src="media/rmse_rnn_model.png"  width="600" height="400">
+<img src="media/rmse_rnn_model.PNG"  width="600" height="400">
 
 We observe that M-2 consistently performs better than the other models for all measures. There are a few models that performs well only on a few measures(M-1, M-5, M-12, M-14) whereas a few models perform poorly for all measures(M-9, M-10). We can also see that all models perform well in evaluating syntax and vocabulary but struggles when evaluating Phraseology and Grammar. 
 
