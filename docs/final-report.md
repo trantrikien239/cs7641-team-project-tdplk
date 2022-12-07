@@ -246,10 +246,10 @@ All members contributed a similar amount of efforts.
 | Progress Report | Duncan | Methods, Baseline Model Development |
 | Progress Report | Lily | Methods, Baseline Model Development |
 | Final Report | Tanmay | Clustering Model Development, Clustering Evaluation, Visualization, Report |
-| Final Report | Palash | *(tba)* |
+| Final Report | Palash | Research BERT sentence transformers; Build, train and experiments of NN models, Report|
 | Final Report | Kien | Research Essay embedding pre-trained models, Develop framework and models, Report |
-| Final Report | Duncan | *(tba)* |
-| Final Report | Lily | *(tba)* |
+| Final Report | Duncan | Methods, Baseline Model Development, report, presentation |
+| Final Report | Lily | Methods, Baseline Model Development, report, presentation |
 
 
 # References: 
