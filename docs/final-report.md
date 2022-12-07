@@ -14,7 +14,7 @@ Thus, we decided to apply BERT using transfer learning to construct a multi-dime
 
 **Model Input**
 
-Input for the models that we will build is the student essays provided by the competition. The dataset contains 3911 essays with an average length of 461 words. The words per essay data is also positively skewed.
+The input for the models that we will build is the student essays provided by the competition. The dataset contains 3911 essays with an average length of 461 words. The words per essay data is also positively skewed.
 
 ![figure1](media/f1.png)
 <img src="media/f2.png"  width="300" height="250">
@@ -52,8 +52,9 @@ In the case of BERT-based models, we utilized Transfer Learning, meaning that we
 
 
 ### B. RNN-based models
-Pre-processing: After tokenization, we leveraged existing pre-trained word embeddings, specifically glove-wiki-gigaword-200 embeddings as input for the recurrent network. Using this embedding, each word was represented by a 200-dimensional vector. All typos were assigned to a trainable vector, initialized randomly, so that the model can understand typos through learning.
-Modeling: For the encoder, Gated Recurrent Unit (GRU) and Long-short term memory (LSTM) were two of the most prominent RNN models. We chose GRU over LSTM as it has proven to train much faster with minimal or no sacrifice in performance. GRU can be stacked (similar to multi-layer perceptron) to enable the learning of more complex patterns. We employed dropout as the main regularization method for the GRU cells. For the decoders, we decided to use a fully-connected multi-layer perceptron (MLP) because it is powerful and easy to train.
+**Pre-processing:** After tokenization, we leveraged existing pre-trained word embeddings, specifically glove-wiki-gigaword-200 embeddings as input for the recurrent network. Using this embedding, each word was represented by a 200-dimensional vector. All typos were assigned to a trainable vector, initialized randomly, so that the model can understand typos through learning.
+
+**Modeling:** For the encoder, Gated Recurrent Unit (GRU) and Long-short term memory (LSTM) were two of the most prominent RNN models. We chose GRU over LSTM as it has proven to train much faster with minimal or no sacrifice in performance. GRU can be stacked (similar to multi-layer perceptron) to enable the learning of more complex patterns. We employed dropout as the main regularization method for the GRU cells. For the decoders, we decided to use a fully-connected multi-layer perceptron (MLP) because it is powerful and easy to train.
 
 ![rnn-architecture](media/rnn-architecture.jpeg)
 
