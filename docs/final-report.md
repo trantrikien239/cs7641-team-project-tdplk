@@ -37,7 +37,11 @@ As we had 6 different scores for each essay, the methods we used for Supervised 
     - Encoder: Pre-trained BERT model
     - Decoder: We tried both classical machine learning models (linear regression, tree-based models), and MLP models
 
-In the case of BERT-based models, we utilized Transfer Learning, meaning that we reused the pre-trained model and applied a new problem statement to it.
+In the case of BERT-based models, we utilized Transfer Learning, meaning that we reused the pre-trained model and applied a new problem statement to it. 
+
+We evaluate the performance of our Supervised model using the mean column wise root mean squared error(MCRMSE), since it is the metric used for scoring in the competition.
+
+<img src="media/f4_cropped.png"  width="400" height="100">
 
 ### A. Classical ML model
 **Pre-processing:** By using the LanguageTools library in Python, we were able to quantify and categorize the mistakes in each essay. The library inputted the raw essay text and outputted the number of mistakes in a broad set of categories, including Grammar, Confused Words, Collocations, Redundancy, Style, American English Style, Nonstandard Phrases, Typos, Casing, Semantics, Typography, Miscellaneous, British English, Compounding, and Punctuation. We proceeded to remove the categories American English Style, British English, and Semantics because they were either not relevant to our essay scoring task or had an insignificant number of instances and would not provide meaningful information to our models. 
