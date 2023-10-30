@@ -16,8 +16,8 @@ Thus, we decided to apply BERT using transfer learning to construct a multi-dime
 
 The input for the models that we will build is the student essays provided by the competition. The dataset contains 3911 essays with an average length of 461 words. The words per essay data is also positively skewed.
 
-![figure1](media/f1.png)
-<img src="media/f2.png"  width="300" height="250">
+![figure1](docs/media/f1.png)
+<img src="docs/media/f2.png"  width="300" height="250">
 
 
 **Prediction output**
@@ -41,13 +41,13 @@ In the case of BERT-based models, we utilized Transfer Learning, meaning that we
 
 We evaluate the performance of our Supervised model using the mean column wise root mean squared error(MCRMSE), since it is the metric used for scoring in the competition.
 
-<img src="media/f4_cropped.png"  width="400" height="100">
+<img src="docs/media/f4_cropped.png"  width="400" height="100">
 
 ### A. Classical ML model
 **Pre-processing:** By using the LanguageTools library in Python, we were able to quantify and categorize the mistakes in each essay. The library inputted the raw essay text and outputted the number of mistakes in a broad set of categories, including Grammar, Confused Words, Collocations, Redundancy, Style, American English Style, Nonstandard Phrases, Typos, Casing, Semantics, Typography, Miscellaneous, British English, Compounding, and Punctuation. We proceeded to remove the categories American English Style, British English, and Semantics because they were either not relevant to our essay scoring task or had an insignificant number of instances and would not provide meaningful information to our models. 
 
 
-<img src="media/mistake_counts.png"  width="200" height="300">
+<img src="docs/media/mistake_counts.png"  width="200" height="300">
 
 *Figure 3: Mistakes categories and corresponding counts*
 
@@ -60,7 +60,7 @@ We evaluate the performance of our Supervised model using the mean column wise r
 
 **Modeling:** For the encoder, Gated Recurrent Unit (GRU) and Long-short term memory (LSTM) were two of the most prominent RNN models. We chose GRU over LSTM as it has proven to train much faster with minimal or no sacrifice in performance. GRU can be stacked (similar to multi-layer perceptron) to enable the learning of more complex patterns. We employed dropout as the main regularization method for the GRU cells. For the decoders, we decided to use a fully-connected multi-layer perceptron (MLP) because it is powerful and easy to train.
 
-![rnn-architecture](media/rnn-architecture.jpeg)
+![rnn-architecture](docs/media/rnn-architecture.jpeg)
 
 *Figure 4: Network architecture of the RNN model*
 
@@ -123,11 +123,11 @@ The validation performances are shown in the table below:
 
 **Validation RMSE for Different Models**
 
-![metrics_for_baseline_model](media/metrics_for_baseline_model.PNG)
+![metrics_for_baseline_model](docs/media/metrics_for_baseline_model.PNG)
 
 **RMSE Plot for Different Models**
 
-![plot_for_baseline_model](media/plot_for_baseline_model.PNG)
+![plot_for_baseline_model](docs/media/plot_for_baseline_model.PNG)
 
 *Figure 5: XGBoost Performance in MCRMSE and RMSE*
 
@@ -138,13 +138,13 @@ We selected XGBoost as our baseline model as it had the lowest MCRMSE and used i
 We compare the model performance on MCRMSE (Mean column-wise root mean squared error). The test results for the models are shown below.
 
 
-![metric for rnn model](media/metric_for_rnn_model.jpeg)
+![metric for rnn model](docs/media/metric_for_rnn_model.jpeg)
 
 *Figure 6: Evaluation metrics of the RNN models*
 
-![mcrmse_rnn_model](media/mcrmse_rnn_model.jpeg)
+![mcrmse_rnn_model](docs/media/mcrmse_rnn_model.jpeg)
 
-![rmse_rnn_model](media/rmse_rnn_model.jpeg)
+![rmse_rnn_model](docs/media/rmse_rnn_model.jpeg)
 
 *Figures 7 & 8: Visualization of MCRMSE and RMSE of an individual score for RNN models*
 
@@ -155,7 +155,7 @@ We observed that M-2 consistently performs better than the other models for all 
 
 **Approach-1**
 
-![bert-classical-models](media/bert-classical-models.jpeg)
+![bert-classical-models](docs/media/bert-classical-models.jpeg)
 
 *Figure 9: 10-fold cross-validated MCRMSE for Linear and tree-based models*
 
@@ -168,7 +168,7 @@ Among different versions of random forest models, we found that more flexible mo
 
 The results of the model iterations are shown below in the chart. The individual graph in the grid is a MCRMSE variation plot with epochs for a network model with a given learning rate.
 
-![bert-dnn-1](media/bert-dnn-1.jpeg)
+![bert-dnn-1](docs/media/bert-dnn-1.jpeg)
 
 *Figure 10: MCRMSE plot with Epoch for a combination of BERT model and learning rate*
 
@@ -177,7 +177,7 @@ We observed that with an increase in learning rate on a logarithmic scale, the p
 
 Although the models above run for 600 epochs, we captured the model snapshots for epochs with lowest test MCRMSE. The results are as below:
 
-![bert-dnn-2](media/bert-dnn-2.jpeg)
+![bert-dnn-2](docs/media/bert-dnn-2.jpeg)
 
 *Figure 11: Model performance comparison at epoch with lowest Test MCRMSE*
 
@@ -186,7 +186,7 @@ The top-3 models M-1 (1 Hidden layer, LR = e-03, epochs=300), M-2 (1 Hidden laye
 
 ### Supervised models results discussion
 
-![supervised-discussion](media/supervised-discussion.jpeg)
+![supervised-discussion](docs/media/supervised-discussion.jpeg)
 
 *Figure 11: Best performance of each model types*
 
@@ -199,19 +199,19 @@ Comparing different approaches, we clearly saw:
 ## 2. Unsupervised models results
 We first trained a Hierarchical Clustering model with Complete Linkage on the predicted scores from the BERT model. We plotted a dendrogram for the model as shown below, and we decided to use a cutoff of six and to obtain two as the optimal number of clusters.
 
-![dendogram1](media/dendogram1.jpeg)
+![dendogram1](docs/media/dendogram1.jpeg)
 
 *Figure 12: Dendrogram for hierarchical clustering (Complete Linkage)*
 
 We then decided to test the following types of models with two clusters: KMeans Clustering and Gaussian Mixture Model. To validate whether two clusters were appropriate for KMeans and GMM, we calculated Silhouette Coefficients and Davies-Bouldin Indexes for the results of KMeans and GMM at different numbers of clusters. Seeing the results below, Silhouette is highest for two clusters. However, Davies-Bouldin is also high. We decided to stick with two clusters because the benefit of an additional cluster is not significant according to the metrics.
 
-![unsupervised-1](media/unsupervised-1.jpeg)
+![unsupervised-1](docs/media/unsupervised-1.jpeg)
 
 *Figure 13: Clustering Metrics for KMeans and GMM*
 
 From the graphs above, we can also see that KMeans has a higher Silhouette Coefficient of 0.57 and a lower Davies-Bouldin Index of 0.58 than GMM at two clusters, indicating a better clustering performance. We found that the Hierarchical Model’s Silhouette Coefficient is 0.51 and Davies-Bouldin Index is 0.56, which indicates a similar clustering performance to KMeans. We decided to select the Hierarchical model because it provided the largest separation between low scoring writers and high scoring writers in terms of average score within each cluster.
  
-![unsupervised-2](media/unsupervised-2.jpeg)
+![unsupervised-2](docs/media/unsupervised-2.jpeg)
 
 *Figure 14: Hierarchical Clustering Results*
 
@@ -219,7 +219,7 @@ The results of the clustering are shown above. We can see that the clusters divi
 
 We were not able to gain any additional insight from our clustering task because of the nature of the essay score data. As shown below, each essay score metric is highly correlated with one another. Writers that scored high in one metric tended to score high in the others, whether this is because of general language skill or due to scoring bias. This limited our ability to find many different clusters.
 
-![unsupervised-3](media/unsupervised-3.jpeg)
+![unsupervised-3](docs/media/unsupervised-3.jpeg)
 
 *Figure 15: Original Scores Pairs Plot*
 
